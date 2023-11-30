@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "gnc1bP/wD0YmO5OJnDfq8Hmty6+lmte2KCoFNHSy9S116ESVztDbBR3Idgjdbg8wWVuP8lPX2sgKe/AQ2mUrlw==",
+  "dgSpecHash": "dWOKYLIJ/smLcQRL6DPGkyQD0DK3G6p7jrV4jJtXd781jVNRrSSqas6JuunSluWmu/nkx+YUFkHDZQBrgXzVxg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\manve\\Desktop\\Taller3\\backend\\Backend.csproj",
+  "projectFilePath": "c:\\Users\\manve\\Desktop\\Taller3\\Backend\\Backend.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\manve\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\manve\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
+    "C:\\Users\\manve\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\manve\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\manve\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\manve\\.nuget\\packages\\humanizer.core.af\\2.14.1\\humanizer.core.af.2.14.1.nupkg.sha512",
