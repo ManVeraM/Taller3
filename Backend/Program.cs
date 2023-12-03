@@ -15,7 +15,7 @@ var secretkey = builder.Configuration.GetSection("Settings").GetSection("SecretK
 
 var keyBytes = Encoding.UTF8.GetBytes(secretkey);
 
-/*builder.Services.AddAuthentication(config =>
+builder.Services.AddAuthentication(config =>
 {
     config.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
     config.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -30,7 +30,7 @@ var keyBytes = Encoding.UTF8.GetBytes(secretkey);
         ValidateIssuer = false,
         ValidateAudience = false
     };
-});*/
+});
 
 
 builder.Services.AddControllers();

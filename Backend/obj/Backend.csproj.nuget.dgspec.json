@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\manve\\Desktop\\Taller3\\Backend\\Backend.csproj": {}
+    "C:\\Users\\manve\\Desktop\\Taller3\\Backend\\Backend.csproj": {}
   },
   "projects": {
-    "c:\\Users\\manve\\Desktop\\Taller3\\Backend\\Backend.csproj": {
+    "C:\\Users\\manve\\Desktop\\Taller3\\Backend\\Backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\manve\\Desktop\\Taller3\\Backend\\Backend.csproj",
+        "projectUniqueName": "C:\\Users\\manve\\Desktop\\Taller3\\Backend\\Backend.csproj",
         "projectName": "Backend",
-        "projectPath": "c:\\Users\\manve\\Desktop\\Taller3\\Backend\\Backend.csproj",
+        "projectPath": "C:\\Users\\manve\\Desktop\\Taller3\\Backend\\Backend.csproj",
         "packagesPath": "C:\\Users\\manve\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\manve\\Desktop\\Taller3\\Backend\\obj\\",
+        "outputPath": "C:\\Users\\manve\\Desktop\\Taller3\\Backend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\manve\\AppData\\Roaming\\NuGet\\NuGet.Config",

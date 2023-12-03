@@ -37,7 +37,7 @@ namespace Dumbo.Controllers{
         /// <summary>
         /// Validate if the credentials matches with the registered admin
         /// </summary>
-        /// <param name="admin">Model that contains a admin that wants to log into the system</param>
+        /// <param name="User">Model that contains a user that wants to log into the system</param>
         /// <returns>
         /// If crendentials are correct return status 200 with the token
         /// Else return status 401 with a message the invalid credentials

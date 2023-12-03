@@ -6,11 +6,13 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Backend.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Backend.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class UsersController : ControllerBase
     {
         private readonly DataContext _context;
@@ -145,7 +147,6 @@ namespace Backend.Controllers
         {
             // Eliminar puntos y guiones del RUT
             rut = rut.Replace(".", "").Replace("-", "");
-            Console.WriteLine(rut);
     
             // Verificar que el RUT tenga el formato correcto
             if (!System.Text.RegularExpressions.Regex.IsMatch(rut, @"^[0-9]{8,9}$"))
