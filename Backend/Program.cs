@@ -3,17 +3,18 @@ using Backend.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using DotNetEnv;
 
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 var builder = WebApplication.CreateBuilder(args);
+Env.Load();
 
 // Add services to the container.
 
 builder.Configuration.AddJsonFile("appsettings.json");
 
-var secretkey = builder.Configuration.GetSection("Settings").GetSection("SecretKey").ToString();
 
-var keyBytes = Encoding.UTF8.GetBytes(secretkey);
+var keyBytes = Encoding.UTF8.GetBytes(Env.GetString("TOKEN_SECRET"));
 
 builder.Services.AddAuthentication(config =>
 {

@@ -14,6 +14,7 @@ using System.Text;
 using Microsoft.AspNetCore.Authorization.Infrastructure;
 using System.Security.Claims;
 using BCrypt.Net;
+using DotNetEnv;
 
 
 namespace Dumbo.Controllers{
@@ -24,8 +25,8 @@ namespace Dumbo.Controllers{
         private readonly string secretKey;
         private readonly DataContext _context;
 
-        public AuthenticationController(IConfiguration config, DataContext context){
-            secretKey = config.GetSection("Settings").GetSection("SecretKey").ToString();
+        public AuthenticationController(DataContext context){
+            secretKey = Env.GetString("TOKEN_SECRET");
             _context = context;
 
         }
@@ -60,7 +61,7 @@ namespace Dumbo.Controllers{
             }
             
 
-            var keyBytes = Encoding.ASCII.GetBytes(secretKey);
+            var keyBytes = Encoding.ASCII.GetBytes(Env.GetString("TOKEN_SECRET"));
             var claims = new ClaimsIdentity();
             claims.AddClaim(new Claim(ClaimTypes.NameIdentifier, user.Rut));
 

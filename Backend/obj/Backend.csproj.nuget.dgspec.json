@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\manve\\Desktop\\Taller3\\Backend\\Backend.csproj": {}
+    "c:\\Users\\manve\\Taller3\\Backend\\Backend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\manve\\Desktop\\Taller3\\Backend\\Backend.csproj": {
+    "c:\\Users\\manve\\Taller3\\Backend\\Backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\manve\\Desktop\\Taller3\\Backend\\Backend.csproj",
+        "projectUniqueName": "c:\\Users\\manve\\Taller3\\Backend\\Backend.csproj",
         "projectName": "Backend",
-        "projectPath": "C:\\Users\\manve\\Desktop\\Taller3\\Backend\\Backend.csproj",
+        "projectPath": "c:\\Users\\manve\\Taller3\\Backend\\Backend.csproj",
         "packagesPath": "C:\\Users\\manve\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\manve\\Desktop\\Taller3\\Backend\\obj\\",
+        "outputPath": "c:\\Users\\manve\\Taller3\\Backend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\manve\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -43,6 +43,10 @@
             "BCrypt.Net-Next": {
               "target": "Package",
               "version": "[4.0.3, )"
+            },
+            "DotNetEnv": {
+              "target": "Package",
+              "version": "[2.5.0, )"
             },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
@@ -79,6 +83,10 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[8.0.0, )"
+            },
+            "Octokit": {
+              "target": "Package",
+              "version": "[9.0.0, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
