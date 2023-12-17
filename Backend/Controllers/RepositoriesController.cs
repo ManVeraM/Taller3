@@ -49,7 +49,7 @@ namespace MobileHub.Controllers
             return commits.Count;
         }
 
-        [HttpGet("commits")]
+        [HttpGet("commits/{repositoryName}")]
         public async Task<ActionResult<IEnumerable<CommitDTO>>> GetUserCommits(string repositoryName)
         {
             var client = new GitHubClient(new ProductHeaderValue("MobileHub"));
