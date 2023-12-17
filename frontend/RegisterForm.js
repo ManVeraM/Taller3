@@ -3,14 +3,31 @@ import { View, StyleSheet } from 'react-native';
 import { TextInput, Button } from 'react-native-paper';
 
 export default function RegisterForm() {
+  const [user, setUser] = useState(null);
   const [email, setEmail] = useState('');
   const [rut, setRut] = useState('');
   const [fullName, setFullName] = useState('');
   const [birthYear, setBirthYear] = useState('');
 
   const handleRegister = () => {
-    // Aquí puedes manejar el registro
-    console.log(`Email: ${email}, RUT: ${rut}, Nombre completo: ${fullName}, Año de nacimiento: ${birthYear}`);
+    axios.post('http://localhost:5287/', {
+      fullName: fullName,
+      email: email,
+      rut: rut,
+      birthYear: birthYear
+    })
+    .then(response => {
+      // Manejar la respuesta del servidor
+      if (response.data.success) {
+        alert('Registro exitoso!');
+      } else {
+        alert('Error al registrarse: ' + response.data.message);
+      }
+    })
+    .catch(error => {
+      // Manejar el error
+      console.error('Error al registrarse: ', error);
+    });
   };
 
   return (
