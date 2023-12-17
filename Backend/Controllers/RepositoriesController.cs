@@ -24,8 +24,6 @@ namespace MobileHub.Controllers
 
             var getCommitsTasks = repositories.Select(r => GetCommitsAmountByRepository(client, r.Name));
 
-            // [Repo1, Repo2, Repo3...]
-            // [Commit Repo 1, Commit Repo 2, Commit Repo 3]
             var commitsResults = await Task.WhenAll(getCommitsTasks);
 
             var mappedRepositories = repositories.Select((r, index) =>
@@ -50,5 +48,25 @@ namespace MobileHub.Controllers
 
             return commits.Count;
         }
+
+        [HttpGet("commits")]
+        public async Task<ActionResult<IEnumerable<CommitDTO>>> GetUserCommits(string repositoryName)
+        {
+            var client = new GitHubClient(new ProductHeaderValue("MobileHub"));
+            var myToken = Env.GetString("GITHUB_TOKEN_ACCESS");
+            var tokenCred = new Credentials(myToken);
+            client.Credentials = tokenCred;
+
+            var commits = await client.Repository.Commit.GetAll("Dizkm8", repositoryName);
+            
+            var mappedCommits = commits.Select(c => new CommitDTO
+            {
+                Author = c.Author.Login,
+                Date = c.Commit.Author.Date,
+                Message = c.Commit.Message
+            });
+            return Ok(mappedCommits);
+        }
+
     }
 }

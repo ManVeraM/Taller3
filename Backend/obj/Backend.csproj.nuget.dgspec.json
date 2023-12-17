@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\manve\\Taller3\\Backend\\Backend.csproj": {}
+    "C:\\Users\\manve\\Taller3\\backend\\Backend.csproj": {}
   },
   "projects": {
-    "c:\\Users\\manve\\Taller3\\Backend\\Backend.csproj": {
+    "C:\\Users\\manve\\Taller3\\backend\\Backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\manve\\Taller3\\Backend\\Backend.csproj",
+        "projectUniqueName": "C:\\Users\\manve\\Taller3\\backend\\Backend.csproj",
         "projectName": "Backend",
-        "projectPath": "c:\\Users\\manve\\Taller3\\Backend\\Backend.csproj",
+        "projectPath": "C:\\Users\\manve\\Taller3\\backend\\Backend.csproj",
         "packagesPath": "C:\\Users\\manve\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\manve\\Taller3\\Backend\\obj\\",
+        "outputPath": "C:\\Users\\manve\\Taller3\\backend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\manve\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -90,7 +90,11 @@
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.4.0, )"
+              "version": "[6.5.0, )"
+            },
+            "Swashbuckle.AspNetCore.Annotations": {
+              "target": "Package",
+              "version": "[6.5.0, )"
             }
           },
           "imports": [
