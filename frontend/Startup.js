@@ -4,10 +4,14 @@ import { StyleSheet, View, Image } from 'react-native';
 import { Card, Button } from 'react-native-paper';
 import LoginForm from './LoginForm';
 import RegisterForm from './RegisterForm';
+import { useNavigation } from '@react-navigation/native'; // Importa useNavigation
+
 
 export default function Startup() {
   const [showLoginForm, setShowLoginForm] = useState(false);
   const [showRegisterForm, setShowRegisterForm] = useState(false);
+  const navigation = useNavigation(); // Usa useNavigation para obtener la navegación
+
 
   const handleLoginPress = () => {
     setShowLoginForm(true);
@@ -32,7 +36,7 @@ export default function Startup() {
           <Image source={require('./assets/mobilehubLogo.png')} style={styles.logo} />
           {showLoginForm ? (
             <>
-              <LoginForm />
+              <LoginForm navigation={navigation} />
               <Button mode="outlined" style={styles.button} onPress={handleCancelPress}>
                 Cancelar
               </Button>

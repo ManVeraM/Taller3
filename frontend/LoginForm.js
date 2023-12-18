@@ -5,7 +5,7 @@ import axios from 'axios';
 
 export default function LoginForm({ navigation }) {
   const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [password, setPassword] = useState('');  
 
   const handleLogin = () => {
 
@@ -24,8 +24,9 @@ export default function LoginForm({ navigation }) {
     axios.post('http://localhost:5287/api/Authentication/login', user)
       .then(response => {
         if (response.data) {
-          // Inicio de sesión exitoso
+          alert('Registro exitoso!');
           console.log('Inicio de sesión exitoso:', response.data);
+          navigation.navigate('Home');
         } else {
           // Inicio de sesión fallido
           Alert.alert('Error', 'Credenciales inválidas. Por favor, inténtelo de nuevo.');
