@@ -35,7 +35,8 @@ export default function Home() {
             <Card key={repo.name} style={styles.card}>
               <Card.Content>
                 <Title>{repo.name}</Title>
-                <Paragraph>Creado en: {repo.createdAt}</Paragraph>
+                <Paragraph>Creado en: {new Date(repo.createdAt).toLocaleString()}</Paragraph>
+                <Paragraph>Creado en: {new Date(repo.updatedAt).toLocaleString()}</Paragraph>
                 <Paragraph>Cantidad de commits: {repo.commitsAmount}</Paragraph>
               </Card.Content>
               <Card.Actions>

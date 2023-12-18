@@ -1,0 +1,29 @@
+For the backend This is a project powered by .NET 8 and uses sqlite to store data, to run correctly the App you need to do the following steps: You need to check if you have .NET 8 on your machine. To do that you can execute
+
+cd backend
+dotnet help
+Install if you don´t have it.
+
+Modified the .env.exanmple file and add your github access token to it, then rename it as .env
+
+GITHUB_TOKEN_ACCESS= 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
+
+Open a git bash (or terminal) into a custom folder and clone the repository inside them. Install dependencies, with the following command in the terminal
+
+dotnet restore 
+Run the project, with
+
+
+dotnet run
+There are two ways of accesing the users CRUD, the first one being the frontend login that use the admins credentials and the second way is via postman, you can access the API using the following credentials o User: Ochietto o Password: Jaqamain3pals For start there is already a admin with this credentials registered in the database, but this can change if needed.
+
+for the frontend This project was bootstrapped with Create React App.
+
+Make sure to have Node.js installed. Version 18 will work. 
+Install dependencies, with the following command: 
+
+npm install command
+
+To run the project you must use the following command:
+
+npx expo start --web

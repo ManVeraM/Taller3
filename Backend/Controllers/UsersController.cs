@@ -21,14 +21,26 @@ namespace Backend.Controllers
             _context = context;
         }
 
-        // GET: api/Users
+        /// <summary>
+        /// gets all registered users
+        /// </summary>
+        /// <returns>
+        /// users array
+        /// </returns>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<User>>> GetUsers()
         {
             return await _context.Users.ToListAsync();
         }
 
-        // GET: api/Users/5
+        /// <summary>
+        /// gets the user with the given id
+        /// </summary>
+        /// <param name="id">id of the required user</param>
+        /// <returns>
+        /// If user exists return status 200 with the user
+        /// else returns status 404 user not found
+        /// </returns>
         [HttpGet("{id}")]
         public async Task<ActionResult<User>> GetUser(int id)
         {
@@ -42,8 +54,15 @@ namespace Backend.Controllers
             return user;
         }
 
-        // PUT: api/Users/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        /// <summary>
+        /// Updates the user with the given id
+        /// </summary>
+        /// <param name="id">id of the required user</param>
+        /// <param name="user">new data for the selected user</param>
+        /// <returns>
+        /// If user exists return status 200 with the user
+        /// else returns status 404 user not found
+        /// </returns>
         [HttpPut("{id}")]
         public async Task<IActionResult> PutUser(int id, User user)
         {
@@ -78,8 +97,13 @@ namespace Backend.Controllers
             return NoContent();
         }
 
-        // POST: api/Users
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        /// <summary>
+        /// Adds an user to the database
+        /// </summary>
+        /// <param name="usern">new user</param>
+        /// <returns>
+        /// If user exists return status 200 
+        /// </returns>
         [HttpPost]
         public async Task<ActionResult<User>> PostUser(User user)
         {
@@ -104,7 +128,14 @@ namespace Backend.Controllers
             return CreatedAtAction("GetUser", new { id = user.Id }, user);
         }
 
-        // DELETE: api/Users/5
+        /// <summary>
+        /// Deletes the user with the given id
+        /// </summary>
+        /// <param name="id">id of the required user</param>
+        /// <returns>
+        /// If user exists return status 200 and deletes the user
+        /// else returns status 404 user not found
+        /// </returns>
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteUser(int id)
         {
@@ -119,7 +150,13 @@ namespace Backend.Controllers
 
             return NoContent();
         }
-
+        /// <summary>
+        /// Returns if an user exists
+        /// </summary>
+        /// <param name="id">id of the required user</param>
+        /// <returns>
+        /// If user exists return status 200 with true value
+        /// else returns status 404 user and false value
         private bool UserExists(int id)
         {
             return _context.Users.Any(e => e.Id == id);
