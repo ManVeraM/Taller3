@@ -10,7 +10,7 @@ export default function LoginForm({ navigation }) {
 
   const handleLogin = () => {
 
-    // Validaciones básicas
+    // Validations
     if (!email || !password) {
       Alert.alert('Error', 'Por favor, complete todos los campos.');
       return;
@@ -21,11 +21,12 @@ export default function LoginForm({ navigation }) {
     };
     console.log(user)
 
-    // Lógica de inicio de sesión
+    // Login function
     axios.post('http://localhost:5287/api/Authentication/login', user)
     .then(async response => {
         if (response.data) {
           alert('Registro exitoso!');
+          // successful login and token save
           await AsyncStorage.setItem('userToken', response.data.token);
           console.log(response.data.token);
 
@@ -33,7 +34,7 @@ export default function LoginForm({ navigation }) {
 
           navigation.navigate('Home');
         } else {
-          // Inicio de sesión fallido
+          // failed login
           Alert.alert('Error', 'Credenciales inválidas. Por favor, inténtelo de nuevo.');
         }
       })

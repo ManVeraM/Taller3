@@ -16,7 +16,7 @@ export default function Home() {
     const openMenu = () => setVisible(true);
 
     const closeMenu = () => setVisible(false);
-
+    //function that get all the repositories from the backend
     useEffect(() => {
       axios.get("http://localhost:5287/Repositories").then(response => {
         console.log(response.data);

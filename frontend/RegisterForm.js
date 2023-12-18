@@ -17,8 +17,8 @@ export default function RegisterForm() {
   });
 
   const validateRut = (rut) => {
-    // Validación del RUT utilizando el algoritmo del módulo 11
-    const cleanRut = rut.replace(/[^0-9kK]/g, ''); // Eliminar puntos y guiones
+    //Rut validation function
+    const cleanRut = rut.replace(/[^0-9kK]/g, ''); 
     const rutDigits = cleanRut.slice(0, -1);
     const rutVerifier = cleanRut.slice(-1).toLowerCase();
 
@@ -51,14 +51,14 @@ export default function RegisterForm() {
   const validateFullName = (name) => {
     return name.length >= 10 && name.length <= 150;
   };
-
+// mail validations
   const validateEmail = (email) => {
     const emailRegex = /^[\w\.-]+@ucn\.cl$|^[\w\.-]+@alumnos\.ucn\.cl$|^[\w\.-]+@disc\.ucn\.cl$|^[\w\.-]+@ce\.ucn\.cl$/;
     return emailRegex.test(email);
   };
 
   const handleRegister = () => {
-    // Limpiar mensajes de error
+    // clears error messages
     setErrorMessages({
       rut: '',
       birthYear: '',
@@ -66,7 +66,7 @@ export default function RegisterForm() {
       email: '',
     });
 
-    // Validaciones
+    // validations
     let isValid = true;
 
     if (!validateRut(rut)) {
@@ -89,7 +89,7 @@ export default function RegisterForm() {
       isValid = false;
     }
 
-    // Resto de la lógica de registro
+  
     if (isValid) {
       const user = {
         fullName: fullName,

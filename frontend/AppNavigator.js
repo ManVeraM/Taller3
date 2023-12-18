@@ -5,6 +5,8 @@ import Home from './Home';
 
 const Stack = createStackNavigator();
 
+//Declares wich screen to show depending on the user token
+
 export const AppNavigator = ({ token }) => {
   return (
     <Stack.Navigator initialRouteName={token ? 'Home' : 'Login'}>

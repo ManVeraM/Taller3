@@ -6,7 +6,7 @@ import { DataTable, ActivityIndicator } from 'react-native-paper';
 export default function CommitsDisplay({ repositoryName }) {
     const [commits, setCommits] = useState([]);
     const [loading, setLoading] = useState(true);
-
+//function that get all the commits from a repo from the backend
     useEffect(() => {
       setLoading(true);
       axios.get(`http://localhost:5287/Repositories/commits/${repositoryName}`, {

@@ -4,13 +4,13 @@ import { StyleSheet, View, Image } from 'react-native';
 import { Card, Button } from 'react-native-paper';
 import LoginForm from './LoginForm';
 import RegisterForm from './RegisterForm';
-import { useNavigation } from '@react-navigation/native'; // Importa useNavigation
+import { useNavigation } from '@react-navigation/native'; 
 
 
 export default function Startup() {
   const [showLoginForm, setShowLoginForm] = useState(false);
   const [showRegisterForm, setShowRegisterForm] = useState(false);
-  const navigation = useNavigation(); // Usa useNavigation para obtener la navegación
+  const navigation = useNavigation(); 
 
 
   const handleLoginPress = () => {
@@ -68,12 +68,12 @@ export default function Startup() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#D3D3D3', // Color gris pastel
+    backgroundColor: '#D3D3D3',
     alignItems: 'center',
     justifyContent: 'center',
   },
   card: {
-    backgroundColor: '#FFFFFF', // Color blanco
+    backgroundColor: '#FFFFFF', 
   },
   button: {
     marginTop: 10,
