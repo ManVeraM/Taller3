@@ -14,7 +14,7 @@ using System.Text;
 using Microsoft.AspNetCore.Authorization.Infrastructure;
 using System.Security.Claims;
 using BCrypt.Net;
-using DotNetEnv;
+
 
 
 namespace Dumbo.Controllers{
@@ -25,15 +25,11 @@ namespace Dumbo.Controllers{
         private readonly string secretKey;
         private readonly DataContext _context;
 
-        public AuthenticationController(DataContext context){
-            secretKey = Env.GetString("TOKEN_SECRET");
+        public AuthenticationController(IConfiguration config, DataContext context){
+            secretKey = config.GetSection("Settings").GetSection("SecretKey").ToString();
             _context = context;
 
         }
-
-
-   
-
 
         /// <summary>
         /// Validate if the credentials matches with the registered admin
@@ -48,7 +44,7 @@ namespace Dumbo.Controllers{
         public async Task<IActionResult> Login([FromBody] User user)
         {
             
-            var existingUser = await _context.Users.FirstOrDefaultAsync(a => a.Rut == user.Rut);
+            var existingUser = await _context.Users.FirstOrDefaultAsync(a => a.Email == user.Email);
             if (existingUser == null)
             {
                 return StatusCode(StatusCodes.Status401Unauthorized, new { message = "Invalid credentials" });
@@ -61,9 +57,9 @@ namespace Dumbo.Controllers{
             }
             
 
-            var keyBytes = Encoding.ASCII.GetBytes(Env.GetString("TOKEN_SECRET"));
+            var keyBytes = Encoding.ASCII.GetBytes(secretKey);
             var claims = new ClaimsIdentity();
-            claims.AddClaim(new Claim(ClaimTypes.NameIdentifier, user.Rut));
+            claims.AddClaim(new Claim(ClaimTypes.NameIdentifier, existingUser.Email));
 
             var tokenDescriptor = new SecurityTokenDescriptor
             {
