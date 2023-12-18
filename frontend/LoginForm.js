@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, StyleSheet, Alert } from 'react-native';
 import { TextInput, Button } from 'react-native-paper';
 import axios from 'axios';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function LoginForm({ navigation }) {
   const [email, setEmail] = useState('');
@@ -22,10 +23,14 @@ export default function LoginForm({ navigation }) {
 
     // Lógica de inicio de sesión
     axios.post('http://localhost:5287/api/Authentication/login', user)
-      .then(response => {
+    .then(async response => {
         if (response.data) {
           alert('Registro exitoso!');
-          console.log('Inicio de sesión exitoso:', response.data);
+          await AsyncStorage.setItem('userToken', response.data.token);
+          console.log(response.data.token);
+
+             
+
           navigation.navigate('Home');
         } else {
           // Inicio de sesión fallido

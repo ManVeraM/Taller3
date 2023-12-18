@@ -60,6 +60,10 @@ namespace Dumbo.Controllers{
             var keyBytes = Encoding.ASCII.GetBytes(secretKey);
             var claims = new ClaimsIdentity();
             claims.AddClaim(new Claim(ClaimTypes.NameIdentifier, existingUser.Email));
+            claims.AddClaim(new Claim("fullname", existingUser.FullName));
+            claims.AddClaim(new Claim("yearofbirth", existingUser.YearOfBirth.ToString()));
+            claims.AddClaim(new Claim("rut", existingUser.Rut));
+
 
             var tokenDescriptor = new SecurityTokenDescriptor
             {

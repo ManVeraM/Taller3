@@ -5,11 +5,11 @@ import Home from './Home';
 
 const Stack = createStackNavigator();
 
-export const AppNavigator = () => {
+export const AppNavigator = ({ token }) => {
   return (
-    <Stack.Navigator initialRouteName="Login">
-      <Stack.Screen name="Login" component={Startup} />
-      <Stack.Screen name="Home" component={Home} />
+    <Stack.Navigator initialRouteName={token ? 'Home' : 'Login'}>
+      <Stack.Screen name="Login" component={Startup} options={{ headerShown: false }} />
+      <Stack.Screen name="Home" component={Home} options={{ headerShown: false }} />
     </Stack.Navigator>
   );
 };

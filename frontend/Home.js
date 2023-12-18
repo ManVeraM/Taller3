@@ -5,11 +5,17 @@ import { Card, Title, Paragraph, ActivityIndicator, Button } from 'react-native-
 import { Modal } from 'react-native';
 import CommitsDisplay from './CommitsDisplay'; // Asegúrate de que la ruta sea correcta
 
+
 export default function Home() {
     const [repositories, setRepositories] = useState([]);
     const [loading, setLoading] = useState(true);
     const [modalVisible, setModalVisible] = useState(false);
     const [selectedRepo, setSelectedRepo] = useState(null); 
+    const [visible, setVisible] = useState(false);
+
+    const openMenu = () => setVisible(true);
+
+    const closeMenu = () => setVisible(false);
 
     useEffect(() => {
       axios.get("http://localhost:5287/Repositories").then(response => {
