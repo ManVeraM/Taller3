@@ -6,7 +6,7 @@ Install if you don´t have it.
 
 Modified the .env.exanmple file and add your github access token to it, then rename it as .env
 
-GITHUB_TOKEN_ACCESS= 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
+GITHUB_TOKEN_ACCESS= your token
 
 Open a git bash (or terminal) into a custom folder and clone the repository inside them. Install dependencies, with the following command in the terminal
 
